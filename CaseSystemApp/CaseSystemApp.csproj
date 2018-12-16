@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FED7FFB8-6651-48D6-9C45-AAECB730CB15}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CaseSystemApp</RootNamespace>
+    <AssemblyName>CaseSystemApp</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddDB.Designer.cs">
+      <DependentUpon>AddDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddEntity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEntity.Designer.cs">
+      <DependentUpon>AddEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddServer.Designer.cs">
+      <DependentUpon>AddServer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CaseSystem.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CaseSystem.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CaseSystem.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CaseSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Column.cs">
+      <DependentUpon>CaseSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connection.cs">
+      <DependentUpon>CaseSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase.cs">
+      <DependentUpon>CaseSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CaseSystem.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CaseSystem.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAttributes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAttributes.Designer.cs">
+      <DependentUpon>FrmAttributes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mask.cs">
+      <DependentUpon>CaseSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OpenDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OpenDB.Designer.cs">
+      <DependentUpon>OpenDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChangeServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeServer.Designer.cs">
+      <DependentUpon>ChangeServer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Server.cs">
+      <DependentUpon>CaseSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SysDiagrams.cs">
+      <DependentUpon>CaseSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Table.cs">
+      <DependentUpon>CaseSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Type.cs">
+      <DependentUpon>CaseSystem.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddDB.resx">
+      <DependentUpon>AddDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddEntity.resx">
+      <DependentUpon>AddEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddServer.resx">
+      <DependentUpon>AddServer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAttributes.resx">
+      <DependentUpon>FrmAttributes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OpenDB.resx">
+      <DependentUpon>OpenDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangeServer.resx">
+      <DependentUpon>ChangeServer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EntityDeploy Include="CaseSystem.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CaseSystem.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.1 %28x86 и x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CaseSystem.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CaseSystem.Context.cs</LastGenOutput>
+      <DependentUpon>CaseSystem.edmx</DependentUpon>
+    </Content>
+    <Content Include="CaseSystem.edmx.sql" />
+    <Content Include="CaseSystem.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CaseSystem.cs</LastGenOutput>
+      <DependentUpon>CaseSystem.edmx</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
