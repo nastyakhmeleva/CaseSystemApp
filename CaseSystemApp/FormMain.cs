@@ -18,21 +18,6 @@ namespace CaseSystemApp
         public FormMain()
         {
             InitializeComponent();
-            ShowComboBoxes();
-        }
-
-        public void ShowComboBoxes()
-        {
-            ServerList.Items.Clear();
-            foreach (Server server in model.ServerSet)
-            {
-                ServerList.Items.Add(server.Name);
-            }
-            DBList.Items.Clear();
-            foreach (DataBase db in model.DataBaseSet)
-            {
-                DBList.Items.Add(db.Name);
-            }
         }
         #region Server
         private void AddServer_Click(object sender, EventArgs e)
@@ -50,14 +35,18 @@ namespace CaseSystemApp
         }
         private void ChangeServer_Click(object sender, EventArgs e)
         {
-            //foreach (Server server in model.ServerSet)
-            //{
-            //    if (server.Name==ChangeServer.)
-            //}
-            //ChangeServer changeServer = new ChangeServer(Int32.Parse());
-            //Server server = (Server)ServerList.SelectedItem;
-            //ChangeServer ChangeServer = new ChangeServer();
-           // ChangeServer.ShowDialog();
+            int id=-1;
+            foreach (Server server in model.ServerSet)
+            {
+                if (server.Name == ServerList.Text)
+                    id = server.Id;
+            }
+
+            if (id != -1)
+            {
+                ChangeServer ChangeServer = new ChangeServer(id);
+                ChangeServer.ShowDialog();
+            }
             ServerList.DataSource = model.ServerSet.ToList();
             ServerList.DisplayMember = "Name";
         }
