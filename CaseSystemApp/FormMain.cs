@@ -32,6 +32,7 @@ namespace CaseSystemApp
             Server temp = (Server)ServerList.SelectedItem;
             List<DataBase> list = model.DataBaseSet.Where(p => p.Server.Id == temp.Id).ToList();
             DBList.DataSource = list;
+            DBList.DisplayMember = "Name";
         }
         private void ChangeServer_Click(object sender, EventArgs e)
         {
@@ -66,7 +67,6 @@ namespace CaseSystemApp
         {
             DataBase db = (DataBase)DBList.SelectedItem;
             List<Table> list = model.TableSet.Where(p => p.DataBase.Id == db.Id).ToList();
-            //List<Table> list2 = model.TableSet.Where(p => p.DataBase.Id == temp2.Id).ToList();
             EntityList.DataSource = list;
             EntityList.DisplayMember = "Name";
         }
@@ -74,8 +74,8 @@ namespace CaseSystemApp
         {
             DataBase database = (DataBase)DBList.SelectedItem;
             Server server = (Server)ServerList.SelectedItem;
-            ChangeDB OpenDB = new ChangeDB(model, database, server);
-            OpenDB.ShowDialog();
+            ChangeDB ChangeDB = new ChangeDB(model, database, server);
+            ChangeDB.ShowDialog();
             DBList.DataSource = model.DataBaseSet.ToList();
             DBList.DisplayMember = "Name";
         }
