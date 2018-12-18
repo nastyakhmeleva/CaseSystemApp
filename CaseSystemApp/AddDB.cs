@@ -1,12 +1,13 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace CaseSystemApp
 {
     public partial class AddDB : Form
     {
-        DataModelContainer model;
-        Server server;
+        public static DataModelContainer model = new DataModelContainer();
+        public static Server server;
         public AddDB(DataModelContainer m, Server s)
         {
             InitializeComponent();
@@ -15,32 +16,39 @@ namespace CaseSystemApp
         }
         private void SaveDB_Click(object sender, EventArgs e)
         {
-            if (NameTextBox.TextLength == 0)
-                MessageBox.Show("Нельзя создать базу данных. Пожалуйста, введите ее название.");
-
-            else
+            var db = model.DataBaseSet.Where(u => u.Name.Contains(NameTextBox.Text)).ToList();
+            if (db.Count <= 0)
             {
-                bool flag = false;
-                foreach (DataBase c in model.DataBaseSet)
-                    if (c.Name == NameTextBox.Text)
-                        flag = true;
-                if (flag == true)
-                    MessageBox.Show("База данных с таким именем уже зарегистрирована в системе. Пожалуйста, придумайте другое название.", "Ошибка!");
-                else
+                if (NameTextBox.Text != "")
                 {
-                    DataBase database = new DataBase();
-                    database.Name = NameTextBox.Text;
-                    database.Server = server;
-                    server.DataBase.Add(database);
-                    model.DataBaseSet.Add(database);
+                    DataBase dbase = new DataBase()
+                    {
+                        Name = NameTextBox.Text,
+                        Server = server,
+                    };
+                    server.DataBase.Add(dbase);
+                    model.DataBaseSet.Add(dbase);
                     model.SaveChanges();
-                    Close();
                 }
+                else if (NameTextBox.Text == "") MessageBox.Show("Вы не указали имя базы данных");
             }
+            else MessageBox.Show("База данных с указанным именем уже существует");
+
+            this.Close();
         }
         private void CancelButton_Click(object sender, EventArgs e)
         {
-            Close();
+            DialogResult result = MessageBox.Show(
+                "Отменить добавление новой базы данных?",
+                "Сообщение",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button2,
+                MessageBoxOptions.DefaultDesktopOnly);
+            if (result == DialogResult.Yes)
+            {
+                Close();
+            }
         }
     }
 }
