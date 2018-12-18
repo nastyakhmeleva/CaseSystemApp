@@ -32,7 +32,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.EntityList = new System.Windows.Forms.ComboBox();
             this.AddEntity = new System.Windows.Forms.Button();
-            this.ChangeEntity = new System.Windows.Forms.Button();
+            this.ShowEntity = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.FormList = new System.Windows.Forms.ComboBox();
             this.ChangeForm = new System.Windows.Forms.Button();
@@ -68,9 +68,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(12, 90);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(206, 13);
+            this.label3.Size = new System.Drawing.Size(135, 13);
             this.label3.TabIndex = 19;
-            this.label3.Text = "2. Выберите или создайте базу данных";
+            this.label3.Text = "2. Выберите базу данных";
             // 
             // EntityList
             // 
@@ -91,20 +91,20 @@
             this.AddEntity.UseVisualStyleBackColor = true;
             this.AddEntity.Click += new System.EventHandler(this.AddEntity_Click);
             // 
-            // ChangeEntity
+            // ShowEntity
             // 
-            this.ChangeEntity.Location = new System.Drawing.Point(99, 215);
-            this.ChangeEntity.Name = "ChangeEntity";
-            this.ChangeEntity.Size = new System.Drawing.Size(91, 24);
-            this.ChangeEntity.TabIndex = 29;
-            this.ChangeEntity.Text = "Просмотреть";
-            this.ChangeEntity.UseVisualStyleBackColor = true;
-            this.ChangeEntity.Click += new System.EventHandler(this.OpenEntity_Click);
+            this.ShowEntity.Location = new System.Drawing.Point(99, 215);
+            this.ShowEntity.Name = "ShowEntity";
+            this.ShowEntity.Size = new System.Drawing.Size(91, 24);
+            this.ShowEntity.TabIndex = 29;
+            this.ShowEntity.Text = "Просмотреть";
+            this.ShowEntity.UseVisualStyleBackColor = true;
+            this.ShowEntity.Click += new System.EventHandler(this.ShowEntity_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(254, 89);
+            this.label4.Location = new System.Drawing.Point(248, 90);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(97, 13);
             this.label4.TabIndex = 30;
@@ -114,14 +114,14 @@
             // 
             this.FormList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.FormList.FormattingEnabled = true;
-            this.FormList.Location = new System.Drawing.Point(254, 105);
+            this.FormList.Location = new System.Drawing.Point(248, 106);
             this.FormList.Name = "FormList";
             this.FormList.Size = new System.Drawing.Size(178, 21);
             this.FormList.TabIndex = 31;
             // 
             // ChangeForm
             // 
-            this.ChangeForm.Location = new System.Drawing.Point(341, 132);
+            this.ChangeForm.Location = new System.Drawing.Point(335, 133);
             this.ChangeForm.Name = "ChangeForm";
             this.ChangeForm.Size = new System.Drawing.Size(91, 24);
             this.ChangeForm.TabIndex = 33;
@@ -130,7 +130,7 @@
             // 
             // AddForm
             // 
-            this.AddForm.Location = new System.Drawing.Point(254, 132);
+            this.AddForm.Location = new System.Drawing.Point(248, 133);
             this.AddForm.Name = "AddForm";
             this.AddForm.Size = new System.Drawing.Size(81, 24);
             this.AddForm.TabIndex = 32;
@@ -140,7 +140,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(254, 9);
+            this.label5.Location = new System.Drawing.Point(248, 9);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(100, 13);
             this.label5.TabIndex = 34;
@@ -148,7 +148,7 @@
             // 
             // ChangeQuestion
             // 
-            this.ChangeQuestion.Location = new System.Drawing.Point(341, 52);
+            this.ChangeQuestion.Location = new System.Drawing.Point(335, 52);
             this.ChangeQuestion.Name = "ChangeQuestion";
             this.ChangeQuestion.Size = new System.Drawing.Size(91, 24);
             this.ChangeQuestion.TabIndex = 37;
@@ -159,14 +159,14 @@
             // 
             this.QuestionList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.QuestionList.FormattingEnabled = true;
-            this.QuestionList.Location = new System.Drawing.Point(254, 25);
+            this.QuestionList.Location = new System.Drawing.Point(248, 25);
             this.QuestionList.Name = "QuestionList";
             this.QuestionList.Size = new System.Drawing.Size(178, 21);
             this.QuestionList.TabIndex = 36;
             // 
             // AddQuestion
             // 
-            this.AddQuestion.Location = new System.Drawing.Point(254, 52);
+            this.AddQuestion.Location = new System.Drawing.Point(248, 52);
             this.AddQuestion.Name = "AddQuestion";
             this.AddQuestion.Size = new System.Drawing.Size(81, 24);
             this.AddQuestion.TabIndex = 35;
@@ -175,7 +175,7 @@
             // 
             // ChangeReport
             // 
-            this.ChangeReport.Location = new System.Drawing.Point(341, 211);
+            this.ChangeReport.Location = new System.Drawing.Point(335, 215);
             this.ChangeReport.Name = "ChangeReport";
             this.ChangeReport.Size = new System.Drawing.Size(91, 24);
             this.ChangeReport.TabIndex = 41;
@@ -186,14 +186,14 @@
             // 
             this.ReportList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ReportList.FormattingEnabled = true;
-            this.ReportList.Location = new System.Drawing.Point(254, 184);
+            this.ReportList.Location = new System.Drawing.Point(248, 188);
             this.ReportList.Name = "ReportList";
             this.ReportList.Size = new System.Drawing.Size(178, 21);
             this.ReportList.TabIndex = 40;
             // 
             // AddReport
             // 
-            this.AddReport.Location = new System.Drawing.Point(254, 211);
+            this.AddReport.Location = new System.Drawing.Point(248, 215);
             this.AddReport.Name = "AddReport";
             this.AddReport.Size = new System.Drawing.Size(81, 24);
             this.AddReport.TabIndex = 39;
@@ -203,12 +203,11 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(251, 168);
+            this.label6.Location = new System.Drawing.Point(245, 172);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(91, 13);
             this.label6.TabIndex = 38;
             this.label6.Text = "6. Создать отчет";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // ChangeServer
             // 
@@ -218,7 +217,7 @@
             this.ChangeServer.TabIndex = 44;
             this.ChangeServer.Text = "Изменить";
             this.ChangeServer.UseVisualStyleBackColor = true;
-            this.ChangeServer.Click += new System.EventHandler(this.OpenServer_Click);
+            this.ChangeServer.Click += new System.EventHandler(this.ChangeServer_Click);
             // 
             // AddServer
             // 
@@ -248,7 +247,7 @@
             this.ChangeBD.TabIndex = 47;
             this.ChangeBD.Text = "Изменить";
             this.ChangeBD.UseVisualStyleBackColor = true;
-            this.ChangeBD.Click += new System.EventHandler(this.OpenBD_Click);
+            this.ChangeBD.Click += new System.EventHandler(this.ChangeDB_Click);
             // 
             // AddDB
             // 
@@ -303,7 +302,7 @@
             this.Controls.Add(this.AddForm);
             this.Controls.Add(this.FormList);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.ChangeEntity);
+            this.Controls.Add(this.ShowEntity);
             this.Controls.Add(this.AddEntity);
             this.Controls.Add(this.EntityList);
             this.Controls.Add(this.label3);
@@ -322,7 +321,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox EntityList;
         private System.Windows.Forms.Button AddEntity;
-        private System.Windows.Forms.Button ChangeEntity;
+        private System.Windows.Forms.Button ShowEntity;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox FormList;
         private System.Windows.Forms.Button ChangeForm;

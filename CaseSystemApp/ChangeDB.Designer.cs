@@ -1,6 +1,6 @@
 ﻿namespace CaseSystemApp
 {
-    partial class OpenDB
+    partial class ChangeDB
     {
         /// <summary>
         /// Required designer variable.
@@ -36,7 +36,7 @@
             // 
             // CancelButton
             // 
-            this.CancelButton.Location = new System.Drawing.Point(237, 107);
+            this.CancelButton.Location = new System.Drawing.Point(245, 32);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(95, 29);
             this.CancelButton.TabIndex = 14;
@@ -46,7 +46,7 @@
             // 
             // SaveDB
             // 
-            this.SaveDB.Location = new System.Drawing.Point(74, 107);
+            this.SaveDB.Location = new System.Drawing.Point(144, 32);
             this.SaveDB.Name = "SaveDB";
             this.SaveDB.Size = new System.Drawing.Size(95, 29);
             this.SaveDB.TabIndex = 15;
@@ -57,7 +57,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(43, 57);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(126, 13);
             this.label1.TabIndex = 16;
@@ -65,23 +65,22 @@
             // 
             // DBName
             // 
-            this.DBName.Location = new System.Drawing.Point(193, 57);
+            this.DBName.Location = new System.Drawing.Point(144, 6);
             this.DBName.Name = "DBName";
-            this.DBName.Size = new System.Drawing.Size(139, 20);
+            this.DBName.Size = new System.Drawing.Size(196, 20);
             this.DBName.TabIndex = 17;
             // 
-            // OpenDB
+            // ChangeDB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(405, 185);
+            this.ClientSize = new System.Drawing.Size(374, 78);
             this.Controls.Add(this.DBName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.SaveDB);
             this.Controls.Add(this.CancelButton);
-            this.Name = "OpenDB";
+            this.Name = "ChangeDB";
             this.Text = "Изменить базу данных";
-            this.Load += new System.EventHandler(this.OpenDB_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

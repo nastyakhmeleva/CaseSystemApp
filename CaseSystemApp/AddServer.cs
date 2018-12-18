@@ -20,33 +20,38 @@ namespace CaseSystemApp
         }
         private void SaveServer_Click(object sender, EventArgs e)
         {
-            if (NameTextBox == null)
-                MessageBox.Show("Нельзя создать сервер. Пожалуйста, введите его название.");
-            else
+            var servers = model.ServerSet.Where(u => u.Name.Contains(NameTextBox.Text)).ToList();
+            if (servers.Count <= 0)
             {
-                bool flag = false;
-                if (model.ServerSet != null)
+                if (NameTextBox.Text != "")
                 {
-                    foreach (Server c in model.ServerSet)
-                        if (c.Name == NameTextBox.Text)
-                            flag = true;
-                }
-                if (flag)
-                    MessageBox.Show("Сервер с таким именем уже зарегистрирован в системе. Пожалуйста, придумайте другое название.");
-                else
-                {
-                    Server server = new Server();
-                    server.Name = NameTextBox.Text;
+                    Server server = new Server()
+                    {
+                        Name = NameTextBox.Text
+                    };
                     model.ServerSet.Add(server);
                     model.SaveChanges();
-                    Close();
                 }
+                else if (NameTextBox.Text == "") MessageBox.Show("Вы не указали имя сервера");
             }
+            else MessageBox.Show("Сервер с указанным именем уже существует");
+
+            this.Close();
         }
 
         private void CancelButton_Click(object sender, EventArgs e)
         {
-            Close();
+            DialogResult result = MessageBox.Show(
+                "Отменить добавление нового сервера?",
+                "Сообщение",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button2,
+                MessageBoxOptions.DefaultDesktopOnly);
+            if (result == DialogResult.Yes)
+            {
+                Close();
+            }
         }
     }
 }

@@ -126,11 +126,11 @@
     <Compile Include="Mask.cs">
       <DependentUpon>CaseSystem.tt</DependentUpon>
     </Compile>
-    <Compile Include="OpenDB.cs">
+    <Compile Include="ChangeDB.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OpenDB.Designer.cs">
-      <DependentUpon>OpenDB.cs</DependentUpon>
+    <Compile Include="ChangeDB.Designer.cs">
+      <DependentUpon>ChangeDB.cs</DependentUpon>
     </Compile>
     <Compile Include="ChangeServer.cs">
       <SubType>Form</SubType>
@@ -167,8 +167,8 @@
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OpenDB.resx">
-      <DependentUpon>OpenDB.cs</DependentUpon>
+    <EmbeddedResource Include="ChangeDB.resx">
+      <DependentUpon>ChangeDB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChangeServer.resx">
       <DependentUpon>ChangeServer.cs</DependentUpon>

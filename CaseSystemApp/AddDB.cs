@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CaseSystemApp
@@ -20,18 +13,10 @@ namespace CaseSystemApp
             model = m;
             server = s;
         }
-
-        //MetaData1Entities cont = new MetaData1Entities();
-
-        private void CancelButton_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
         private void SaveDB_Click(object sender, EventArgs e)
         {
             if (NameTextBox.TextLength == 0)
-                MessageBox.Show("Нельзя создать сущность. Пожалуйста, введите ее название.", "Ошибка!");
+                MessageBox.Show("Нельзя создать базу данных. Пожалуйста, введите ее название.");
 
             else
             {
@@ -52,6 +37,10 @@ namespace CaseSystemApp
                     Close();
                 }
             }
+        }
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
