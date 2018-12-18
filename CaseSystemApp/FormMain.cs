@@ -45,9 +45,6 @@ namespace CaseSystemApp
             EntityList.DataSource = list2;
             EntityList.DisplayMember = "Name";
         }
-
-        
-
         private void OpenEntity_Click(object sender, EventArgs e)
         {
             Table table = (Table)EntityList.SelectedItem;

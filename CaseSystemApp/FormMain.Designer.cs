@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.ServerLabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.EntityList = new System.Windows.Forms.ComboBox();
             this.AddEntity = new System.Windows.Forms.Button();
@@ -52,48 +51,39 @@
             this.ChangeBD = new System.Windows.Forms.Button();
             this.AddDB = new System.Windows.Forms.Button();
             this.DBList = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 143);
+            this.label1.Location = new System.Drawing.Point(12, 172);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 13);
+            this.label1.Size = new System.Drawing.Size(167, 13);
             this.label1.TabIndex = 17;
-            this.label1.Text = "Сущности";
-            // 
-            // ServerLabel
-            // 
-            this.ServerLabel.AutoSize = true;
-            this.ServerLabel.Location = new System.Drawing.Point(12, 9);
-            this.ServerLabel.Name = "ServerLabel";
-            this.ServerLabel.Size = new System.Drawing.Size(44, 13);
-            this.ServerLabel.TabIndex = 18;
-            this.ServerLabel.Text = "Сервер";
+            this.label1.Text = "3. Определитесь с сущностями";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 76);
+            this.label3.Location = new System.Drawing.Point(12, 90);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 13);
+            this.label3.Size = new System.Drawing.Size(206, 13);
             this.label3.TabIndex = 19;
-            this.label3.Text = "База данных";
+            this.label3.Text = "2. Выберите или создайте базу данных";
             // 
             // EntityList
             // 
             this.EntityList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.EntityList.FormattingEnabled = true;
-            this.EntityList.Location = new System.Drawing.Point(113, 140);
+            this.EntityList.Location = new System.Drawing.Point(12, 188);
             this.EntityList.Name = "EntityList";
             this.EntityList.Size = new System.Drawing.Size(178, 21);
             this.EntityList.TabIndex = 20;
             // 
             // AddEntity
             // 
-            this.AddEntity.Location = new System.Drawing.Point(113, 167);
+            this.AddEntity.Location = new System.Drawing.Point(12, 215);
             this.AddEntity.Name = "AddEntity";
             this.AddEntity.Size = new System.Drawing.Size(81, 24);
             this.AddEntity.TabIndex = 21;
@@ -103,7 +93,7 @@
             // 
             // ChangeEntity
             // 
-            this.ChangeEntity.Location = new System.Drawing.Point(200, 167);
+            this.ChangeEntity.Location = new System.Drawing.Point(99, 215);
             this.ChangeEntity.Name = "ChangeEntity";
             this.ChangeEntity.Size = new System.Drawing.Size(91, 24);
             this.ChangeEntity.TabIndex = 29;
@@ -114,24 +104,24 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 267);
+            this.label4.Location = new System.Drawing.Point(254, 89);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 13);
+            this.label4.Size = new System.Drawing.Size(97, 13);
             this.label4.TabIndex = 30;
-            this.label4.Text = "Формы";
+            this.label4.Text = "5. Создать форму";
             // 
             // FormList
             // 
             this.FormList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.FormList.FormattingEnabled = true;
-            this.FormList.Location = new System.Drawing.Point(113, 267);
+            this.FormList.Location = new System.Drawing.Point(254, 105);
             this.FormList.Name = "FormList";
             this.FormList.Size = new System.Drawing.Size(178, 21);
             this.FormList.TabIndex = 31;
             // 
             // ChangeForm
             // 
-            this.ChangeForm.Location = new System.Drawing.Point(200, 294);
+            this.ChangeForm.Location = new System.Drawing.Point(341, 132);
             this.ChangeForm.Name = "ChangeForm";
             this.ChangeForm.Size = new System.Drawing.Size(91, 24);
             this.ChangeForm.TabIndex = 33;
@@ -140,7 +130,7 @@
             // 
             // AddForm
             // 
-            this.AddForm.Location = new System.Drawing.Point(113, 294);
+            this.AddForm.Location = new System.Drawing.Point(254, 132);
             this.AddForm.Name = "AddForm";
             this.AddForm.Size = new System.Drawing.Size(81, 24);
             this.AddForm.TabIndex = 32;
@@ -150,15 +140,15 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 207);
+            this.label5.Location = new System.Drawing.Point(254, 9);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 13);
+            this.label5.Size = new System.Drawing.Size(100, 13);
             this.label5.TabIndex = 34;
-            this.label5.Text = "Запросы";
+            this.label5.Text = "4. Создать запрос";
             // 
             // ChangeQuestion
             // 
-            this.ChangeQuestion.Location = new System.Drawing.Point(200, 231);
+            this.ChangeQuestion.Location = new System.Drawing.Point(341, 52);
             this.ChangeQuestion.Name = "ChangeQuestion";
             this.ChangeQuestion.Size = new System.Drawing.Size(91, 24);
             this.ChangeQuestion.TabIndex = 37;
@@ -169,14 +159,14 @@
             // 
             this.QuestionList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.QuestionList.FormattingEnabled = true;
-            this.QuestionList.Location = new System.Drawing.Point(113, 204);
+            this.QuestionList.Location = new System.Drawing.Point(254, 25);
             this.QuestionList.Name = "QuestionList";
             this.QuestionList.Size = new System.Drawing.Size(178, 21);
             this.QuestionList.TabIndex = 36;
             // 
             // AddQuestion
             // 
-            this.AddQuestion.Location = new System.Drawing.Point(113, 231);
+            this.AddQuestion.Location = new System.Drawing.Point(254, 52);
             this.AddQuestion.Name = "AddQuestion";
             this.AddQuestion.Size = new System.Drawing.Size(81, 24);
             this.AddQuestion.TabIndex = 35;
@@ -185,7 +175,7 @@
             // 
             // ChangeReport
             // 
-            this.ChangeReport.Location = new System.Drawing.Point(200, 356);
+            this.ChangeReport.Location = new System.Drawing.Point(341, 211);
             this.ChangeReport.Name = "ChangeReport";
             this.ChangeReport.Size = new System.Drawing.Size(91, 24);
             this.ChangeReport.TabIndex = 41;
@@ -196,14 +186,14 @@
             // 
             this.ReportList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ReportList.FormattingEnabled = true;
-            this.ReportList.Location = new System.Drawing.Point(113, 329);
+            this.ReportList.Location = new System.Drawing.Point(254, 184);
             this.ReportList.Name = "ReportList";
             this.ReportList.Size = new System.Drawing.Size(178, 21);
             this.ReportList.TabIndex = 40;
             // 
             // AddReport
             // 
-            this.AddReport.Location = new System.Drawing.Point(113, 356);
+            this.AddReport.Location = new System.Drawing.Point(254, 211);
             this.AddReport.Name = "AddReport";
             this.AddReport.Size = new System.Drawing.Size(81, 24);
             this.AddReport.TabIndex = 39;
@@ -213,16 +203,16 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(14, 329);
+            this.label6.Location = new System.Drawing.Point(251, 168);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(44, 13);
+            this.label6.Size = new System.Drawing.Size(91, 13);
             this.label6.TabIndex = 38;
-            this.label6.Text = "Отчеты";
+            this.label6.Text = "6. Создать отчет";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // ChangeServer
             // 
-            this.ChangeServer.Location = new System.Drawing.Point(210, 33);
+            this.ChangeServer.Location = new System.Drawing.Point(109, 52);
             this.ChangeServer.Name = "ChangeServer";
             this.ChangeServer.Size = new System.Drawing.Size(81, 24);
             this.ChangeServer.TabIndex = 44;
@@ -232,7 +222,7 @@
             // 
             // AddServer
             // 
-            this.AddServer.Location = new System.Drawing.Point(113, 33);
+            this.AddServer.Location = new System.Drawing.Point(12, 52);
             this.AddServer.Name = "AddServer";
             this.AddServer.Size = new System.Drawing.Size(81, 24);
             this.AddServer.TabIndex = 43;
@@ -244,7 +234,7 @@
             // 
             this.ServerList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ServerList.FormattingEnabled = true;
-            this.ServerList.Location = new System.Drawing.Point(113, 6);
+            this.ServerList.Location = new System.Drawing.Point(12, 25);
             this.ServerList.Name = "ServerList";
             this.ServerList.Size = new System.Drawing.Size(178, 21);
             this.ServerList.TabIndex = 42;
@@ -252,7 +242,7 @@
             // 
             // ChangeBD
             // 
-            this.ChangeBD.Location = new System.Drawing.Point(210, 100);
+            this.ChangeBD.Location = new System.Drawing.Point(112, 133);
             this.ChangeBD.Name = "ChangeBD";
             this.ChangeBD.Size = new System.Drawing.Size(81, 24);
             this.ChangeBD.TabIndex = 47;
@@ -262,7 +252,7 @@
             // 
             // AddDB
             // 
-            this.AddDB.Location = new System.Drawing.Point(113, 100);
+            this.AddDB.Location = new System.Drawing.Point(15, 133);
             this.AddDB.Name = "AddDB";
             this.AddDB.Size = new System.Drawing.Size(81, 24);
             this.AddDB.TabIndex = 46;
@@ -274,27 +264,27 @@
             // 
             this.DBList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.DBList.FormattingEnabled = true;
-            this.DBList.Location = new System.Drawing.Point(113, 73);
+            this.DBList.Location = new System.Drawing.Point(15, 106);
             this.DBList.Name = "DBList";
             this.DBList.Size = new System.Drawing.Size(178, 21);
             this.DBList.TabIndex = 45;
             this.DBList.SelectedIndexChanged += new System.EventHandler(this.DBList_SelectedIndexChanged);
             // 
-            // button1
+            // label2
             // 
-            this.button1.Location = new System.Drawing.Point(12, 386);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(279, 43);
-            this.button1.TabIndex = 48;
-            this.button1.Text = "Просмотреть созданную базу данных";
-            this.button1.UseVisualStyleBackColor = true;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(108, 13);
+            this.label2.TabIndex = 49;
+            this.label2.Text = "1. Выберите сервер";
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(663, 457);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(465, 271);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.ChangeBD);
             this.Controls.Add(this.AddDB);
             this.Controls.Add(this.DBList);
@@ -317,7 +307,6 @@
             this.Controls.Add(this.AddEntity);
             this.Controls.Add(this.EntityList);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.ServerLabel);
             this.Controls.Add(this.label1);
             this.Name = "FormMain";
             this.Text = "CaseSystem";
@@ -330,7 +319,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label ServerLabel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox EntityList;
         private System.Windows.Forms.Button AddEntity;
@@ -353,7 +341,7 @@
         private System.Windows.Forms.Button ChangeBD;
         private System.Windows.Forms.Button AddDB;
         private System.Windows.Forms.ComboBox DBList;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label2;
     }
 }
 
