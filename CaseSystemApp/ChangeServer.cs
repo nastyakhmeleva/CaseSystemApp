@@ -12,45 +12,42 @@ namespace CaseSystemApp
 {
     public partial class ChangeServer : Form
     {
-        DataModelContainer model;
-        Server server;
-        public ChangeServer(DataModelContainer m, Server s)
+        public static DataModelContainer model = new DataModelContainer();
+        public static Server server;
+        public ChangeServer(int id)
         {
             InitializeComponent();
-            model = m;
-            server = s;
-            ServerName.Text = server.Name.ToString();
-            
+            server = model.ServerSet.Find(id);
+            ShowTextBox();
+        }
+        public void ShowTextBox()
+        {
+            ServerName.Text = server.Name;
         }
         private void SaveServer_Click(object sender, EventArgs e)
         {
-            
-            if (ServerName == null)
-                MessageBox.Show("Нельзя создать сервер. Пожалуйста, введите его название.");
-            else
+            if (ServerName.Text != "")
             {
-                bool flag = false;
-                if (model.ServerSet != null)
-                {
-                    foreach (Server c in model.ServerSet)
-                        if (c.Name == ServerName.Text)
-                            flag = true;
-                }
-                if (flag)
-                    MessageBox.Show("Сервер с таким именем уже зарегистрирован в системе. Пожалуйста, придумайте другое название.");
-                else
-                {
+                if (server.Name != ServerName.Text)
                     server.Name = ServerName.Text;
-                    model.ServerSet.Where(x => x.Id == server.Id).FirstOrDefault().Name = ServerName.Text;
-                    model.SaveChanges();
-                    Close();
-                }
+                model.SaveChanges();
+                Close();
             }
+            else if (ServerName.Text == "") MessageBox.Show("Вы не указали название сервера");
         }
-
         private void CancelButton_Click(object sender, EventArgs e)
         {
-            Close();
+            DialogResult result = MessageBox.Show(
+                "Отменить изменение имени сервера?",
+                "Сообщение",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button2,
+                MessageBoxOptions.DefaultDesktopOnly);
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }

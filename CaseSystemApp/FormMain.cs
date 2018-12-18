@@ -50,9 +50,14 @@ namespace CaseSystemApp
         }
         private void ChangeServer_Click(object sender, EventArgs e)
         {
-            Server server = (Server)ServerList.SelectedItem;
-            ChangeServer OpenServer = new ChangeServer(model, server);
-            OpenServer.ShowDialog();
+            //foreach (Server server in model.ServerSet)
+            //{
+            //    if (server.Name==ChangeServer.)
+            //}
+            //ChangeServer changeServer = new ChangeServer(Int32.Parse());
+            //Server server = (Server)ServerList.SelectedItem;
+            //ChangeServer ChangeServer = new ChangeServer();
+           // ChangeServer.ShowDialog();
             ServerList.DataSource = model.ServerSet.ToList();
             ServerList.DisplayMember = "Name";
         }

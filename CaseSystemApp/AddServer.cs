@@ -12,7 +12,7 @@ namespace CaseSystemApp
 {
     public partial class AddServer : Form
     {
-        DataModelContainer model;
+        public static DataModelContainer model=new DataModelContainer();
         public AddServer(DataModelContainer m)
         {
             InitializeComponent();
