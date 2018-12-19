@@ -99,9 +99,6 @@ namespace CaseSystemApp
         private void ShowEntity_Click(object sender, EventArgs e)
         {
             Table table = (Table)EntityList.SelectedItem;
-
-            //Close();
-
             FrmAttributes form = new FrmAttributes(model, table);
             form.ShowDialog();
         }
