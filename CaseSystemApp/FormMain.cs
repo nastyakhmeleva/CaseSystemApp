@@ -19,6 +19,7 @@ namespace CaseSystemApp
         {
             InitializeComponent();
         }
+
         #region Server
         private void AddServer_Click(object sender, EventArgs e)
         {
@@ -27,6 +28,7 @@ namespace CaseSystemApp
             ServerList.DataSource = model.ServerSet.ToList();
             ServerList.DisplayMember = "Name";
         }
+
         private void ServerList_SelectedIndexChanged(object sender, EventArgs e)
         {
             Server temp = (Server)ServerList.SelectedItem;
@@ -34,6 +36,7 @@ namespace CaseSystemApp
             DBList.DataSource = list;
             DBList.DisplayMember = "Name";
         }
+
         private void ChangeServer_Click(object sender, EventArgs e)
         {
             int id=-1;
@@ -47,11 +50,12 @@ namespace CaseSystemApp
             {
                 ChangeServer ChangeServer = new ChangeServer(id);
                 ChangeServer.ShowDialog();
+                ServerList.DataSource = model.ServerSet.ToList();
+                ServerList.DisplayMember = "Name";
             }
-            ServerList.DataSource = model.ServerSet.ToList();
-            ServerList.DisplayMember = "Name";
         }
         #endregion
+
         #region DataBase
         private void AddDB_Click(object sender, EventArgs e)
         {
@@ -91,6 +95,7 @@ namespace CaseSystemApp
             EntityList.DataSource = list2;
             EntityList.DisplayMember = "Name";
         }
+
         private void ShowEntity_Click(object sender, EventArgs e)
         {
             Table table = (Table)EntityList.SelectedItem;

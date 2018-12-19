@@ -33,7 +33,21 @@ namespace CaseSystemApp
             TypeAttribute.DataSource = key;
 
             string[] type = new string[] {"string", "int", "bool" };
-            TypeComboBox.DataSource = type; 
+            TypeComboBox.DataSource = type;
+
+            List<Column> columns = model.ColumnSet.Where(x=>x.Table.Id==table.Id).ToList();
+
+            foreach (Column c in columns)
+            {
+                dataGridViewATT.Rows.Add();
+                dataGridViewATT.Rows[dataGridViewATT.RowCount - 1].Cells[0].Value = c.Name;
+                //dataGridViewATT.Rows[dataGridViewATT.RowCount - 1].Cells[1].Value = ;
+                dataGridViewATT.Rows[dataGridViewATT.RowCount - 1].Cells[2].Value = c.Type.Name;
+                if (c.Key)
+                dataGridViewATT.Rows[dataGridViewATT.RowCount - 1].Cells[3].Value = "Ключевой";
+                else
+                    dataGridViewATT.Rows[dataGridViewATT.RowCount - 1].Cells[3].Value = "Не ключевой";
+            }
         }
 
         private void AddAttribute_Click(object sender, EventArgs e)
@@ -45,8 +59,6 @@ namespace CaseSystemApp
             string description = textBoxDescriptio.Text;
             if (TypeAttribute.SelectedItem.ToString()=="Ключевой")
                 key = true;
-            if (TypeAttribute.SelectedItem.ToString() == "Не ключевой")
-                key = false;
             
             string type = TypeComboBox.SelectedItem.ToString();
                 
@@ -62,9 +74,10 @@ namespace CaseSystemApp
 //if (TypeComboBox.SelectedItem.ToString() == "int") Type
 
             dataGridViewATT.Rows.Add();
-            dataGridViewATT.Rows[0].Cells[0].Value = name;
-            dataGridViewATT.Rows[0].Cells[1].Value = description;
-            dataGridViewATT.Rows[0].Cells[3].Value = TypeAttribute.SelectedItem.ToString();
+            dataGridViewATT.Rows[dataGridViewATT.RowCount-1].Cells[0].Value = name;
+            dataGridViewATT.Rows[dataGridViewATT.RowCount-1].Cells[1].Value = description;
+            dataGridViewATT.Rows[dataGridViewATT.RowCount - 1].Cells[2].Value = type;
+            dataGridViewATT.Rows[dataGridViewATT.RowCount-1].Cells[3].Value = TypeAttribute.SelectedItem.ToString();
 
             //server.DataBase.Add(database);
             //model.DataBaseSet.Add(database);

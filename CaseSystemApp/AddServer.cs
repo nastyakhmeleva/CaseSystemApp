@@ -20,7 +20,7 @@ namespace CaseSystemApp
         }
         private void SaveServer_Click(object sender, EventArgs e)
         {
-            var servers = model.ServerSet.Where(u => u.Name.Contains(NameTextBox.Text)).ToList();
+            var servers = model.ServerSet.Where(u => u.Name==NameTextBox.Text).ToList();
             if (servers.Count <= 0)
             {
                 if (NameTextBox.Text != "")
