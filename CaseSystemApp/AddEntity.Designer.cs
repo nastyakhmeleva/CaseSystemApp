@@ -52,7 +52,6 @@
             this.label1.Size = new System.Drawing.Size(109, 13);
             this.label1.TabIndex = 7;
             this.label1.Text = "Название сущности";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // NameTextBox
             // 
@@ -60,7 +59,6 @@
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(196, 20);
             this.NameTextBox.TabIndex = 6;
-            this.NameTextBox.TextChanged += new System.EventHandler(this.NameTextBox_TextChanged);
             // 
             // SaveEntity
             // 
@@ -83,7 +81,6 @@
             this.Controls.Add(this.NameTextBox);
             this.Name = "AddEntity";
             this.Text = "Добавить сущность";
-            this.Load += new System.EventHandler(this.AddEntity_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

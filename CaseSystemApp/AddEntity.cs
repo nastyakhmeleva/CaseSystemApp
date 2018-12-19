@@ -12,8 +12,8 @@ namespace CaseSystemApp
 {
     public partial class AddEntity : Form
     {
-        DataModelContainer model;
-        DataBase dataBase;
+        public static DataModelContainer model = new DataModelContainer();
+        public static DataBase dataBase;
 
         public AddEntity(DataBase db, DataModelContainer dmc)
         {
@@ -22,53 +22,44 @@ namespace CaseSystemApp
             dataBase = db;
         }
 
-        private void CancelButton_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
 
         private void SaveEntity_Click(object sender, EventArgs e)
         {
-            if (NameTextBox.TextLength == 0)
-                MessageBox.Show("Нельзя создать сущность. Пожалуйста, введите ее название.", "Ошибка!");
-            else
+            var entity = model.TableSet.Where(u => u.Name.Contains(NameTextBox.Text)).ToList();
+            if (entity.Count <= 0)
             {
-                bool flag = false;
-                foreach (Table c in model.TableSet)
-                    if (c.Name == NameTextBox.Text)
-                        flag = true;
-                if (flag == true)
-                    MessageBox.Show("Сущность с таким именем уже зарегистрирована в системе. Пожалуйста, придумайте другое название.", "Ошибка!");
-                else
+                if (NameTextBox.Text != "")
                 {
-                    Table table = new Table();
-                    table.Name = NameTextBox.Text;
-                    table.DataBase = dataBase;
+                    Table table = new Table()
+                    {
+                        Name = NameTextBox.Text,
+                        DataBase = dataBase
+                    };
                     dataBase.Table.Add(table);
                     model.TableSet.Add(table);
                     model.SaveChanges();
                     Close();
-
                     FrmAttributes form = new FrmAttributes(model, table);
                     form.ShowDialog();
-
                 }
+                else if (NameTextBox.Text == "") MessageBox.Show("Вы не указали имя сущности");
             }
-        }
-
-        private void AddEntity_Load(object sender, EventArgs e)
-        {
+            else MessageBox.Show("Сущность с указанным именем уже существует");
 
         }
-
-        private void label1_Click(object sender, EventArgs e)
+        private void CancelButton_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void NameTextBox_TextChanged(object sender, EventArgs e)
-        {
-
+            DialogResult result = MessageBox.Show(
+                "Отменить добавление новой базы данных?",
+                "Сообщение",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button2,
+                MessageBoxOptions.DefaultDesktopOnly);
+            if (result == DialogResult.Yes)
+            {
+                Close();
+            }
         }
     }
 }
