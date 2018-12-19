@@ -55,46 +55,59 @@ namespace CaseSystemApp
             Column column = new Column();
             bool key=false;
             
-            string name = AtNameTextBox.Text;
-            string description = textBoxDescriptio.Text;
-            if (TypeAttribute.SelectedItem.ToString()=="Ключевой")
-                key = true;
-            
-            string type = TypeComboBox.SelectedItem.ToString();
-                
+                string name = AtNameTextBox.Text;
+            if (name != "")
+            {
+                string description = textBoxDescriptio.Text;
+                if (TypeAttribute.SelectedItem.ToString() == "Ключевой")
+                    key = true;
 
-            // создаем TYPE, делаем связь с Column, кидаем его в массив
-            Type currentType = new CaseSystemApp.Type();
-            column.Type = currentType;
-            currentType.Column.Add(column);
-            currentType.Name = type;
-            currentType.SqlNameType = type;
-            typeList.Add(currentType);
+                string type = TypeComboBox.SelectedItem.ToString();
+
+                // создаем TYPE, делаем связь с Column, кидаем его в массив
+                Type currentType = new CaseSystemApp.Type();
+                column.Type = currentType;
+                currentType.Column.Add(column);
+                currentType.Name = type;
+                currentType.SqlNameType = type;
+                typeList.Add(currentType);
 
 //if (TypeComboBox.SelectedItem.ToString() == "int") Type
 
-            dataGridViewATT.Rows.Add();
-            dataGridViewATT.Rows[dataGridViewATT.RowCount-1].Cells[0].Value = name;
-            dataGridViewATT.Rows[dataGridViewATT.RowCount-1].Cells[1].Value = description;
-            dataGridViewATT.Rows[dataGridViewATT.RowCount - 1].Cells[2].Value = type;
-            dataGridViewATT.Rows[dataGridViewATT.RowCount-1].Cells[3].Value = TypeAttribute.SelectedItem.ToString();
 
-            //server.DataBase.Add(database);
-            //model.DataBaseSet.Add(database);
-            //model.SaveChanges();
+                dataGridViewATT.Rows.Add();
+                dataGridViewATT.Rows[dataGridViewATT.RowCount - 1].Cells[0].Value = name;
+                dataGridViewATT.Rows[dataGridViewATT.RowCount - 1].Cells[1].Value = description;
+                dataGridViewATT.Rows[dataGridViewATT.RowCount - 1].Cells[2].Value = type;
+                dataGridViewATT.Rows[dataGridViewATT.RowCount - 1].Cells[3].Value =
+                    TypeAttribute.SelectedItem.ToString();
 
-            column.Name = name;
-            column.Key = key;
-            column.Type = currentType;
-            column.NotNull = "true";
-            column.Increment = false;
-            //if (table.Id.ToString()=="1")
-            //column. = 1;
-            
 
-            table.Column.Add(column);
-            model.ColumnSet.Add(column);
-            model.SaveChanges();
+                //server.DataBase.Add(database);
+                //model.DataBaseSet.Add(database);
+                //model.SaveChanges();
+
+                column.Name = name;
+                column.Key = key;
+                column.Type = currentType;
+                column.NotNull = "true";
+                column.Increment = false;
+                //if (table.Id.ToString()=="1")
+                //column. = 1;
+
+
+                table.Column.Add(column);
+
+
+                model.ColumnSet.Add(column);
+                model.SaveChanges();
+            }
+            else MessageBox.Show("Не указано имя атрибута");
+            }
+
+        private void DeleteAttribute_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

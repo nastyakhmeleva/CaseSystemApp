@@ -49,6 +49,7 @@
             this.TypeAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CancelButton = new System.Windows.Forms.Button();
             this.SaveButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewATT)).BeginInit();
             this.SuspendLayout();
@@ -126,6 +127,7 @@
             this.DeleteAttribute.TabIndex = 10;
             this.DeleteAttribute.Text = "Удалить";
             this.DeleteAttribute.UseVisualStyleBackColor = true;
+            this.DeleteAttribute.Click += new System.EventHandler(this.DeleteAttribute_Click);
             // 
             // ChangeAttribute
             // 
@@ -247,11 +249,21 @@
             this.SaveButton.Text = "Сохранить";
             this.SaveButton.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(665, 211);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(157, 23);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "Заполнить базу данных";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // FrmAttributes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 290);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.dataGridViewATT);
@@ -292,5 +304,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TypeAt;
         private System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.Button SaveButton;
+        private System.Windows.Forms.Button button1;
     }
 }

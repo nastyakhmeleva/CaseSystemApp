@@ -111,6 +111,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CaseSystem.edmx</DependentUpon>
     </Compile>
+    <Compile Include="FillDataBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FillDataBase.Designer.cs">
+      <DependentUpon>FillDataBase.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAttributes.cs">
       <SubType>Form</SubType>
     </Compile>
